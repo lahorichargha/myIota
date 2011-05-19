@@ -1,0 +1,51 @@
+/* 
+  ENGLISH
+ 
+  Localizable.strings
+  iotaPad6
+
+  Created by Martin on 2011-04-13.
+  Copyright 2011 MITM AB. All rights reserved.
+*/
+
+/* Cancel label for button */
+"Cancel" = "Cancel";
+
+/* Referral cause */
+"Cause:" = "Cause:";
+
+/* Referral history label */
+"History:" = "History:";
+
+/* Title for the issue list and popover */
+"Issues" = "Issues";
+
+/* Just checking */
+"LocalizedLanguage" = "English";
+
+/* Name of the executable minIota */
+"minIota" = "myIota";
+
+/* new contact label */
+"New contact" = "New contact";
+
+/* ok label for button */
+"Ok" = "Ok";
+
+/* Prescription */
+"Prescription" = "Prescription";
+
+/* explanatory text in ContactSelectOrCreateForm */
+"SelectOrCreateContact" = "Select or create a new contact for this subtemplate:";
+
+/* Send referral button */
+"Send" = "Send";
+
+/* Referral status label */
+"Status:" = "Status:";
+
+/* Label for destination of referral */
+"To:" = "To:";
+
+
+

@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA12A37D137B2E800016AB24 /* IssueWorksheetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA12A37C137B2E800016AB24 /* IssueWorksheetController.xib */; };
+		AA12A382137B2FD50016AB24 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA12A381137B2FD50016AB24 /* Settings.bundle */; };
+		AA228A58137862A400F65E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA228A57137862A400F65E6E /* UIKit.framework */; };
+		AA228A5A137862A400F65E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA228A59137862A400F65E6E /* Foundation.framework */; };
+		AA228A5C137862A400F65E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA228A5B137862A400F65E6E /* CoreGraphics.framework */; };
+		AA228A62137862A400F65E6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA228A60137862A400F65E6E /* InfoPlist.strings */; };
+		AA228A65137862A400F65E6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA228A64137862A400F65E6E /* main.m */; };
+		AA228A68137862A400F65E6E /* minIotaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA228A67137862A400F65E6E /* minIotaAppDelegate.m */; };
+		AA228A6B137862A400F65E6E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA228A69137862A400F65E6E /* MainWindow.xib */; };
+		AA228A7B137862A400F65E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA228A57137862A400F65E6E /* UIKit.framework */; };
+		AA228A7C137862A400F65E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA228A59137862A400F65E6E /* Foundation.framework */; };
+		AA228A7D137862A400F65E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA228A5B137862A400F65E6E /* CoreGraphics.framework */; };
+		AA228A85137862A400F65E6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA228A83137862A400F65E6E /* InfoPlist.strings */; };
+		AA228A88137862A400F65E6E /* minIotaTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AA228A87137862A400F65E6E /* minIotaTests.h */; };
+		AA228A8A137862A400F65E6E /* minIotaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA228A89137862A400F65E6E /* minIotaTests.m */; };
+		AA2FF4121382843A00C3ABA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA2FF4111382843A00C3ABA4 /* Localizable.strings */; };
+		AA2FF41D1382863700C3ABA4 /* PatientContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF41A1382863700C3ABA4 /* PatientContext.m */; };
+		AA2FF41E1382863700C3ABA4 /* PatientContextDB.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */; };
+		AA2FF4241382867500C3ABA4 /* ServerConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4211382867500C3ABA4 /* ServerConnect.m */; };
+		AA2FF4251382867500C3ABA4 /* ServerDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4231382867500C3ABA4 /* ServerDiscovery.m */; };
+		AA2FF430138286C500C3ABA4 /* IDRBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF427138286C500C3ABA4 /* IDRBlock.m */; };
+		AA2FF431138286C500C3ABA4 /* IDRContact.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF429138286C500C3ABA4 /* IDRContact.m */; };
+		AA2FF432138286C500C3ABA4 /* IDRObsDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF42B138286C500C3ABA4 /* IDRObsDefinition.m */; };
+		AA2FF433138286C500C3ABA4 /* IDRValue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF42D138286C500C3ABA4 /* IDRValue.m */; };
+		AA2FF434138286C500C3ABA4 /* IDRWorksheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF42F138286C500C3ABA4 /* IDRWorksheet.m */; };
+		AA2FF437138286F500C3ABA4 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF436138286F500C3ABA4 /* Patient.m */; };
+		AA2FF43B1382872800C3ABA4 /* NSString+iotaAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF43A1382872800C3ABA4 /* NSString+iotaAdditions.m */; };
+		AA2FF43F1382877A00C3ABA4 /* Funcs.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF43E1382877A00C3ABA4 /* Funcs.m */; };
+		AA2FF443138287BF00C3ABA4 /* IDRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF442138287BF00C3ABA4 /* IDRItem.m */; };
+		AA2FF446138287E800C3ABA4 /* XML2IDR.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF445138287E800C3ABA4 /* XML2IDR.m */; };
+		AA2FF44C1382883000C3ABA4 /* IDRObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF44B1382883000C3ABA4 /* IDRObservation.m */; };
+		AA2FF44F1382885600C3ABA4 /* IotaContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF44E1382885600C3ABA4 /* IotaContext.m */; };
+		AA2FF4521382887700C3ABA4 /* IDRDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4511382887700C3ABA4 /* IDRDescription.m */; };
+		AA2FF455138288AF00C3ABA4 /* IssueWorksheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF454138288AF00C3ABA4 /* IssueWorksheetController.m */; };
+		AA2FF45E1382894200C3ABA4 /* MyIotaPatientContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF45D1382894200C3ABA4 /* MyIotaPatientContext.m */; };
+		AA2FF4611382896F00C3ABA4 /* IDRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4601382896F00C3ABA4 /* IDRImage.m */; };
+		AA2FF4641382899800C3ABA4 /* DetailViewControllerWithToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4631382899800C3ABA4 /* DetailViewControllerWithToolbar.m */; };
+		AA2FF467138289D000C3ABA4 /* IDRAction.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF466138289D000C3ABA4 /* IDRAction.m */; };
+		AA2FF46A138289D800C3ABA4 /* IDRDose.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF469138289D800C3ABA4 /* IDRDose.m */; };
+		AA2FF46D138289E100C3ABA4 /* IDRTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF46C138289E000C3ABA4 /* IDRTest.m */; };
+		AA2FF4731382C38900C3ABA4 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4701382C38900C3ABA4 /* ItemCell.m */; };
+		AA2FF4741382C38900C3ABA4 /* ItemCellIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4721382C38900C3ABA4 /* ItemCellIssue.m */; };
+		AA2FF4781382C45B00C3ABA4 /* ValueLookupForm.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4761382C45A00C3ABA4 /* ValueLookupForm.m */; };
+		AA2FF4791382C45B00C3ABA4 /* ValueLookupForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2FF4771382C45A00C3ABA4 /* ValueLookupForm.xib */; };
+		AA2FF47C1382C49700C3ABA4 /* ThemeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF47B1382C49700C3ABA4 /* ThemeColors.m */; };
+		AA2FF4801382C4F100C3ABA4 /* UIView+iotaExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF47F1382C4F100C3ABA4 /* UIView+iotaExtensions.m */; };
+		AA2FF4831382C51800C3ABA4 /* BulletView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4821382C51700C3ABA4 /* BulletView.m */; };
+		AA2FF4861382C53E00C3ABA4 /* ValueLookupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4851382C53D00C3ABA4 /* ValueLookupCell.m */; };
+		AA2FF4891382C58A00C3ABA4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4881382C58A00C3ABA4 /* DetailViewController.m */; };
+		AAECB6CA138160F400EAB251 /* IssueListController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAECB6C9138160F400EAB251 /* IssueListController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA228A7E137862A400F65E6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA228A4A137862A400F65E6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA228A52137862A400F65E6E;
+			remoteInfo = minIota;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA12A37C137B2E800016AB24 /* IssueWorksheetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IssueWorksheetController.xib; path = ../minIota/minIota/IssueWorksheetController.xib; sourceTree = "<group>"; };
+		AA12A381137B2FD50016AB24 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		AA228A53137862A400F65E6E /* minIota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minIota.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA228A57137862A400F65E6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AA228A59137862A400F65E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA228A5B137862A400F65E6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AA228A5F137862A400F65E6E /* minIota-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "minIota-Info.plist"; sourceTree = "<group>"; };
+		AA228A61137862A400F65E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA228A63137862A400F65E6E /* minIota-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "minIota-Prefix.pch"; sourceTree = "<group>"; };
+		AA228A64137862A400F65E6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA228A66137862A400F65E6E /* minIotaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minIotaAppDelegate.h; sourceTree = "<group>"; };
+		AA228A67137862A400F65E6E /* minIotaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minIotaAppDelegate.m; sourceTree = "<group>"; };
+		AA228A6A137862A400F65E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		AA228A7A137862A400F65E6E /* minIotaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = minIotaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA228A82137862A400F65E6E /* minIotaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "minIotaTests-Info.plist"; sourceTree = "<group>"; };
+		AA228A84137862A400F65E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA228A86137862A400F65E6E /* minIotaTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "minIotaTests-Prefix.pch"; sourceTree = "<group>"; };
+		AA228A87137862A400F65E6E /* minIotaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minIotaTests.h; sourceTree = "<group>"; };
+		AA228A89137862A400F65E6E /* minIotaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minIotaTests.m; sourceTree = "<group>"; };
+		AA2FF4111382843A00C3ABA4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		AA2FF418138285C800C3ABA4 /* IotaContextDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IotaContextDelegate.h; path = minIota/IotaContextDelegate.h; sourceTree = SOURCE_ROOT; };
+		AA2FF4191382863700C3ABA4 /* PatientContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientContext.h; path = minIota/PatientContext.h; sourceTree = SOURCE_ROOT; };
+		AA2FF41A1382863700C3ABA4 /* PatientContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientContext.m; path = minIota/PatientContext.m; sourceTree = SOURCE_ROOT; };
+		AA2FF41B1382863700C3ABA4 /* PatientContextDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientContextDB.h; path = minIota/PatientContextDB.h; sourceTree = SOURCE_ROOT; };
+		AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientContextDB.m; path = minIota/PatientContextDB.m; sourceTree = SOURCE_ROOT; };
+		AA2FF4201382867500C3ABA4 /* ServerConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnect.h; sourceTree = "<group>"; };
+		AA2FF4211382867500C3ABA4 /* ServerConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnect.m; sourceTree = "<group>"; };
+		AA2FF4221382867500C3ABA4 /* ServerDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDiscovery.h; sourceTree = "<group>"; };
+		AA2FF4231382867500C3ABA4 /* ServerDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerDiscovery.m; sourceTree = "<group>"; };
+		AA2FF426138286C500C3ABA4 /* IDRBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRBlock.h; path = minIota/IDRBlock.h; sourceTree = SOURCE_ROOT; };
+		AA2FF427138286C500C3ABA4 /* IDRBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRBlock.m; path = minIota/IDRBlock.m; sourceTree = SOURCE_ROOT; };
+		AA2FF428138286C500C3ABA4 /* IDRContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRContact.h; path = minIota/IDRContact.h; sourceTree = SOURCE_ROOT; };
+		AA2FF429138286C500C3ABA4 /* IDRContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRContact.m; path = minIota/IDRContact.m; sourceTree = SOURCE_ROOT; };
+		AA2FF42A138286C500C3ABA4 /* IDRObsDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRObsDefinition.h; path = minIota/IDRObsDefinition.h; sourceTree = SOURCE_ROOT; };
+		AA2FF42B138286C500C3ABA4 /* IDRObsDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRObsDefinition.m; path = minIota/IDRObsDefinition.m; sourceTree = SOURCE_ROOT; };
+		AA2FF42C138286C500C3ABA4 /* IDRValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRValue.h; path = minIota/IDRValue.h; sourceTree = SOURCE_ROOT; };
+		AA2FF42D138286C500C3ABA4 /* IDRValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRValue.m; path = minIota/IDRValue.m; sourceTree = SOURCE_ROOT; };
+		AA2FF42E138286C500C3ABA4 /* IDRWorksheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRWorksheet.h; path = minIota/IDRWorksheet.h; sourceTree = SOURCE_ROOT; };
+		AA2FF42F138286C500C3ABA4 /* IDRWorksheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRWorksheet.m; path = minIota/IDRWorksheet.m; sourceTree = SOURCE_ROOT; };
+		AA2FF435138286F500C3ABA4 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = minIota/Patient.h; sourceTree = SOURCE_ROOT; };
+		AA2FF436138286F500C3ABA4 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = minIota/Patient.m; sourceTree = SOURCE_ROOT; };
+		AA2FF4381382872800C3ABA4 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		AA2FF4391382872800C3ABA4 /* NSString+iotaAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+iotaAdditions.h"; sourceTree = "<group>"; };
+		AA2FF43A1382872800C3ABA4 /* NSString+iotaAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+iotaAdditions.m"; sourceTree = "<group>"; };
+		AA2FF43C1382875000C3ABA4 /* IDRAttribs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRAttribs.h; path = ../minIota/minIota/IDRAttribs.h; sourceTree = "<group>"; };
+		AA2FF43D1382877A00C3ABA4 /* Funcs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Funcs.h; sourceTree = "<group>"; };
+		AA2FF43E1382877A00C3ABA4 /* Funcs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Funcs.m; sourceTree = "<group>"; };
+		AA2FF4401382879A00C3ABA4 /* DebugDump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugDump.h; sourceTree = "<group>"; };
+		AA2FF441138287BF00C3ABA4 /* IDRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRItem.h; path = minIota/IDRItem.h; sourceTree = SOURCE_ROOT; };
+		AA2FF442138287BF00C3ABA4 /* IDRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRItem.m; path = minIota/IDRItem.m; sourceTree = SOURCE_ROOT; };
+		AA2FF444138287E800C3ABA4 /* XML2IDR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XML2IDR.h; path = minIota/XML2IDR.h; sourceTree = SOURCE_ROOT; };
+		AA2FF445138287E800C3ABA4 /* XML2IDR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XML2IDR.m; path = minIota/XML2IDR.m; sourceTree = SOURCE_ROOT; };
+		AA2FF44A1382883000C3ABA4 /* IDRObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRObservation.h; path = minIota/IDRObservation.h; sourceTree = SOURCE_ROOT; };
+		AA2FF44B1382883000C3ABA4 /* IDRObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRObservation.m; path = minIota/IDRObservation.m; sourceTree = SOURCE_ROOT; };
+		AA2FF44D1382885600C3ABA4 /* IotaContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IotaContext.h; path = minIota/IotaContext.h; sourceTree = SOURCE_ROOT; };
+		AA2FF44E1382885600C3ABA4 /* IotaContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IotaContext.m; path = minIota/IotaContext.m; sourceTree = SOURCE_ROOT; };
+		AA2FF4501382887700C3ABA4 /* IDRDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRDescription.h; path = minIota/IDRDescription.h; sourceTree = SOURCE_ROOT; };
+		AA2FF4511382887700C3ABA4 /* IDRDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRDescription.m; path = minIota/IDRDescription.m; sourceTree = SOURCE_ROOT; };
+		AA2FF453138288AF00C3ABA4 /* IssueWorksheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IssueWorksheetController.h; path = minIota/IssueWorksheetController.h; sourceTree = SOURCE_ROOT; };
+		AA2FF454138288AF00C3ABA4 /* IssueWorksheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IssueWorksheetController.m; path = minIota/IssueWorksheetController.m; sourceTree = SOURCE_ROOT; };
+		AA2FF45C1382894200C3ABA4 /* MyIotaPatientContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyIotaPatientContext.h; path = minIota/MyIotaPatientContext.h; sourceTree = SOURCE_ROOT; };
+		AA2FF45D1382894200C3ABA4 /* MyIotaPatientContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyIotaPatientContext.m; path = minIota/MyIotaPatientContext.m; sourceTree = SOURCE_ROOT; };
+		AA2FF45F1382896F00C3ABA4 /* IDRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRImage.h; path = minIota/IDRImage.h; sourceTree = SOURCE_ROOT; };
+		AA2FF4601382896F00C3ABA4 /* IDRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRImage.m; path = minIota/IDRImage.m; sourceTree = SOURCE_ROOT; };
+		AA2FF4621382899800C3ABA4 /* DetailViewControllerWithToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewControllerWithToolbar.h; sourceTree = "<group>"; };
+		AA2FF4631382899800C3ABA4 /* DetailViewControllerWithToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewControllerWithToolbar.m; sourceTree = "<group>"; };
+		AA2FF465138289D000C3ABA4 /* IDRAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRAction.h; path = minIota/IDRAction.h; sourceTree = SOURCE_ROOT; };
+		AA2FF466138289D000C3ABA4 /* IDRAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRAction.m; path = minIota/IDRAction.m; sourceTree = SOURCE_ROOT; };
+		AA2FF468138289D800C3ABA4 /* IDRDose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRDose.h; path = minIota/IDRDose.h; sourceTree = SOURCE_ROOT; };
+		AA2FF469138289D800C3ABA4 /* IDRDose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRDose.m; path = minIota/IDRDose.m; sourceTree = SOURCE_ROOT; };
+		AA2FF46B138289E000C3ABA4 /* IDRTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRTest.h; path = minIota/IDRTest.h; sourceTree = SOURCE_ROOT; };
+		AA2FF46C138289E000C3ABA4 /* IDRTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRTest.m; path = minIota/IDRTest.m; sourceTree = SOURCE_ROOT; };
+		AA2FF46E1382C34A00C3ABA4 /* ItemCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCellDelegate.h; path = minIota/ItemCellDelegate.h; sourceTree = SOURCE_ROOT; };
+		AA2FF46F1382C38900C3ABA4 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCell.h; path = minIota/ItemCell.h; sourceTree = SOURCE_ROOT; };
+		AA2FF4701382C38900C3ABA4 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = minIota/ItemCell.m; sourceTree = SOURCE_ROOT; };
+		AA2FF4711382C38900C3ABA4 /* ItemCellIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCellIssue.h; path = minIota/ItemCellIssue.h; sourceTree = SOURCE_ROOT; };
+		AA2FF4721382C38900C3ABA4 /* ItemCellIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemCellIssue.m; path = minIota/ItemCellIssue.m; sourceTree = SOURCE_ROOT; };
+		AA2FF4751382C45A00C3ABA4 /* ValueLookupForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueLookupForm.h; sourceTree = "<group>"; };
+		AA2FF4761382C45A00C3ABA4 /* ValueLookupForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueLookupForm.m; sourceTree = "<group>"; };
+		AA2FF4771382C45A00C3ABA4 /* ValueLookupForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValueLookupForm.xib; sourceTree = "<group>"; };
+		AA2FF47A1382C49700C3ABA4 /* ThemeColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeColors.h; path = minIota/ThemeColors.h; sourceTree = SOURCE_ROOT; };
+		AA2FF47B1382C49700C3ABA4 /* ThemeColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeColors.m; path = minIota/ThemeColors.m; sourceTree = SOURCE_ROOT; };
+		AA2FF47D1382C49F00C3ABA4 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = minIota/Constants.h; sourceTree = SOURCE_ROOT; };
+		AA2FF47E1382C4F000C3ABA4 /* UIView+iotaExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+iotaExtensions.h"; sourceTree = "<group>"; };
+		AA2FF47F1382C4F100C3ABA4 /* UIView+iotaExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+iotaExtensions.m"; sourceTree = "<group>"; };
+		AA2FF4811382C51700C3ABA4 /* BulletView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletView.h; sourceTree = "<group>"; };
+		AA2FF4821382C51700C3ABA4 /* BulletView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletView.m; sourceTree = "<group>"; };
+		AA2FF4841382C53D00C3ABA4 /* ValueLookupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueLookupCell.h; sourceTree = "<group>"; };
+		AA2FF4851382C53D00C3ABA4 /* ValueLookupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueLookupCell.m; sourceTree = "<group>"; };
+		AA2FF4871382C58900C3ABA4 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		AA2FF4881382C58A00C3ABA4 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		AAECB6C8138160F400EAB251 /* IssueListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IssueListController.h; path = minIota/IssueListController.h; sourceTree = SOURCE_ROOT; };
+		AAECB6C9138160F400EAB251 /* IssueListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IssueListController.m; path = minIota/IssueListController.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA228A50137862A400F65E6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA228A58137862A400F65E6E /* UIKit.framework in Frameworks */,
+				AA228A5A137862A400F65E6E /* Foundation.framework in Frameworks */,
+				AA228A5C137862A400F65E6E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA228A76137862A400F65E6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA228A7B137862A400F65E6E /* UIKit.framework in Frameworks */,
+				AA228A7C137862A400F65E6E /* Foundation.framework in Frameworks */,
+				AA228A7D137862A400F65E6E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA12A387137C70410016AB24 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AA2FF47D1382C49F00C3ABA4 /* Constants.h */,
+				AA2FF47A1382C49700C3ABA4 /* ThemeColors.h */,
+				AA2FF47B1382C49700C3ABA4 /* ThemeColors.m */,
+			);
+			name = Constants;
+			path = ../iotaPad6;
+			sourceTree = "<group>";
+		};
+		AA228A48137862A400F65E6E = {
+			isa = PBXGroup;
+			children = (
+				AA2FF4111382843A00C3ABA4 /* Localizable.strings */,
+				AA12A387137C70410016AB24 /* Constants */,
+				AA12A381137B2FD50016AB24 /* Settings.bundle */,
+				AAF54A721378956900E2D6B5 /* Issue Worksheet */,
+				AA228A5D137862A400F65E6E /* minIota */,
+				AA228A80137862A400F65E6E /* minIotaTests */,
+				AA228A56137862A400F65E6E /* Frameworks */,
+				AA228A54137862A400F65E6E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA228A54137862A400F65E6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA228A53137862A400F65E6E /* minIota.app */,
+				AA228A7A137862A400F65E6E /* minIotaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA228A56137862A400F65E6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA228A57137862A400F65E6E /* UIKit.framework */,
+				AA228A59137862A400F65E6E /* Foundation.framework */,
+				AA228A5B137862A400F65E6E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA228A5D137862A400F65E6E /* minIota */ = {
+			isa = PBXGroup;
+			children = (
+				AA2FF4841382C53D00C3ABA4 /* ValueLookupCell.h */,
+				AA2FF4851382C53D00C3ABA4 /* ValueLookupCell.m */,
+				AA2FF4811382C51700C3ABA4 /* BulletView.h */,
+				AA2FF4821382C51700C3ABA4 /* BulletView.m */,
+				AA2FF47E1382C4F000C3ABA4 /* UIView+iotaExtensions.h */,
+				AA2FF47F1382C4F100C3ABA4 /* UIView+iotaExtensions.m */,
+				AA2FF4751382C45A00C3ABA4 /* ValueLookupForm.h */,
+				AA2FF4761382C45A00C3ABA4 /* ValueLookupForm.m */,
+				AA2FF4771382C45A00C3ABA4 /* ValueLookupForm.xib */,
+				AA2FF4401382879A00C3ABA4 /* DebugDump.h */,
+				AA2FF43D1382877A00C3ABA4 /* Funcs.h */,
+				AA2FF43E1382877A00C3ABA4 /* Funcs.m */,
+				AA2FF4381382872800C3ABA4 /* Notifications.h */,
+				AA2FF4391382872800C3ABA4 /* NSString+iotaAdditions.h */,
+				AA2FF43A1382872800C3ABA4 /* NSString+iotaAdditions.m */,
+				AA2FF4871382C58900C3ABA4 /* DetailViewController.h */,
+				AA2FF4881382C58A00C3ABA4 /* DetailViewController.m */,
+				AA2FF41F1382866500C3ABA4 /* Connections */,
+				AA228AD01378669600F65E6E /* Context and Patient */,
+				AA228ACC1378663E00F65E6E /* Issue List */,
+				AA228AA31378656700F65E6E /* IDR Worksheet */,
+				AA228A66137862A400F65E6E /* minIotaAppDelegate.h */,
+				AA228A67137862A400F65E6E /* minIotaAppDelegate.m */,
+				AA2FF4621382899800C3ABA4 /* DetailViewControllerWithToolbar.h */,
+				AA2FF4631382899800C3ABA4 /* DetailViewControllerWithToolbar.m */,
+				AA228A69137862A400F65E6E /* MainWindow.xib */,
+				AA228A5E137862A400F65E6E /* Supporting Files */,
+			);
+			path = minIota;
+			sourceTree = "<group>";
+		};
+		AA228A5E137862A400F65E6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA228A5F137862A400F65E6E /* minIota-Info.plist */,
+				AA228A60137862A400F65E6E /* InfoPlist.strings */,
+				AA228A63137862A400F65E6E /* minIota-Prefix.pch */,
+				AA228A64137862A400F65E6E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA228A80137862A400F65E6E /* minIotaTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA228A87137862A400F65E6E /* minIotaTests.h */,
+				AA228A89137862A400F65E6E /* minIotaTests.m */,
+				AA228A81137862A400F65E6E /* Supporting Files */,
+			);
+			path = minIotaTests;
+			sourceTree = "<group>";
+		};
+		AA228A81137862A400F65E6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA228A82137862A400F65E6E /* minIotaTests-Info.plist */,
+				AA228A83137862A400F65E6E /* InfoPlist.strings */,
+				AA228A86137862A400F65E6E /* minIotaTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA228AA31378656700F65E6E /* IDR Worksheet */ = {
+			isa = PBXGroup;
+			children = (
+				AA2FF43C1382875000C3ABA4 /* IDRAttribs.h */,
+				AA2FF465138289D000C3ABA4 /* IDRAction.h */,
+				AA2FF466138289D000C3ABA4 /* IDRAction.m */,
+				AA2FF468138289D800C3ABA4 /* IDRDose.h */,
+				AA2FF469138289D800C3ABA4 /* IDRDose.m */,
+				AA2FF46B138289E000C3ABA4 /* IDRTest.h */,
+				AA2FF46C138289E000C3ABA4 /* IDRTest.m */,
+				AA2FF441138287BF00C3ABA4 /* IDRItem.h */,
+				AA2FF442138287BF00C3ABA4 /* IDRItem.m */,
+				AA2FF4501382887700C3ABA4 /* IDRDescription.h */,
+				AA2FF4511382887700C3ABA4 /* IDRDescription.m */,
+				AA2FF426138286C500C3ABA4 /* IDRBlock.h */,
+				AA2FF427138286C500C3ABA4 /* IDRBlock.m */,
+				AA2FF428138286C500C3ABA4 /* IDRContact.h */,
+				AA2FF429138286C500C3ABA4 /* IDRContact.m */,
+				AA2FF42A138286C500C3ABA4 /* IDRObsDefinition.h */,
+				AA2FF42B138286C500C3ABA4 /* IDRObsDefinition.m */,
+				AA2FF42C138286C500C3ABA4 /* IDRValue.h */,
+				AA2FF42D138286C500C3ABA4 /* IDRValue.m */,
+				AA2FF42E138286C500C3ABA4 /* IDRWorksheet.h */,
+				AA2FF42F138286C500C3ABA4 /* IDRWorksheet.m */,
+				AA2FF44A1382883000C3ABA4 /* IDRObservation.h */,
+				AA2FF44B1382883000C3ABA4 /* IDRObservation.m */,
+				AA2FF45F1382896F00C3ABA4 /* IDRImage.h */,
+				AA2FF4601382896F00C3ABA4 /* IDRImage.m */,
+				AA2FF444138287E800C3ABA4 /* XML2IDR.h */,
+				AA2FF445138287E800C3ABA4 /* XML2IDR.m */,
+			);
+			name = "IDR Worksheet";
+			path = ../../iotaPad6;
+			sourceTree = "<group>";
+		};
+		AA228ACC1378663E00F65E6E /* Issue List */ = {
+			isa = PBXGroup;
+			children = (
+				AAECB6C8138160F400EAB251 /* IssueListController.h */,
+				AAECB6C9138160F400EAB251 /* IssueListController.m */,
+			);
+			name = "Issue List";
+			path = ../../iotaPad6;
+			sourceTree = "<group>";
+		};
+		AA228AD01378669600F65E6E /* Context and Patient */ = {
+			isa = PBXGroup;
+			children = (
+				AA2FF44D1382885600C3ABA4 /* IotaContext.h */,
+				AA2FF44E1382885600C3ABA4 /* IotaContext.m */,
+				AA2FF435138286F500C3ABA4 /* Patient.h */,
+				AA2FF436138286F500C3ABA4 /* Patient.m */,
+				AA2FF4191382863700C3ABA4 /* PatientContext.h */,
+				AA2FF41A1382863700C3ABA4 /* PatientContext.m */,
+				AA2FF41B1382863700C3ABA4 /* PatientContextDB.h */,
+				AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */,
+				AA2FF418138285C800C3ABA4 /* IotaContextDelegate.h */,
+				AA2FF45C1382894200C3ABA4 /* MyIotaPatientContext.h */,
+				AA2FF45D1382894200C3ABA4 /* MyIotaPatientContext.m */,
+			);
+			name = "Context and Patient";
+			path = ../../iotaPad6;
+			sourceTree = "<group>";
+		};
+		AA2FF41F1382866500C3ABA4 /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				AA2FF4201382867500C3ABA4 /* ServerConnect.h */,
+				AA2FF4211382867500C3ABA4 /* ServerConnect.m */,
+				AA2FF4221382867500C3ABA4 /* ServerDiscovery.h */,
+				AA2FF4231382867500C3ABA4 /* ServerDiscovery.m */,
+			);
+			name = Connections;
+			sourceTree = "<group>";
+		};
+		AAF54A721378956900E2D6B5 /* Issue Worksheet */ = {
+			isa = PBXGroup;
+			children = (
+				AA2FF453138288AF00C3ABA4 /* IssueWorksheetController.h */,
+				AA2FF454138288AF00C3ABA4 /* IssueWorksheetController.m */,
+				AA12A37C137B2E800016AB24 /* IssueWorksheetController.xib */,
+				AA2FF46E1382C34A00C3ABA4 /* ItemCellDelegate.h */,
+				AA2FF46F1382C38900C3ABA4 /* ItemCell.h */,
+				AA2FF4701382C38900C3ABA4 /* ItemCell.m */,
+				AA2FF4711382C38900C3ABA4 /* ItemCellIssue.h */,
+				AA2FF4721382C38900C3ABA4 /* ItemCellIssue.m */,
+			);
+			name = "Issue Worksheet";
+			path = ../iotaPad6;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA228A52137862A400F65E6E /* minIota */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA228A8D137862A400F65E6E /* Build configuration list for PBXNativeTarget "minIota" */;
+			buildPhases = (
+				AA228A4F137862A400F65E6E /* Sources */,
+				AA228A50137862A400F65E6E /* Frameworks */,
+				AA228A51137862A400F65E6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = minIota;
+			productName = minIota;
+			productReference = AA228A53137862A400F65E6E /* minIota.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA228A79137862A400F65E6E /* minIotaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA228A90137862A400F65E6E /* Build configuration list for PBXNativeTarget "minIotaTests" */;
+			buildPhases = (
+				AA228A75137862A400F65E6E /* Sources */,
+				AA228A76137862A400F65E6E /* Frameworks */,
+				AA228A77137862A400F65E6E /* Resources */,
+				AA228A78137862A400F65E6E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA228A7F137862A400F65E6E /* PBXTargetDependency */,
+			);
+			name = minIotaTests;
+			productName = minIotaTests;
+			productReference = AA228A7A137862A400F65E6E /* minIotaTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA228A4A137862A400F65E6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "MITM AB";
+			};
+			buildConfigurationList = AA228A4D137862A400F65E6E /* Build configuration list for PBXProject "minIota" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA228A48137862A400F65E6E;
+			productRefGroup = AA228A54137862A400F65E6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA228A52137862A400F65E6E /* minIota */,
+				AA228A79137862A400F65E6E /* minIotaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA228A51137862A400F65E6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA228A62137862A400F65E6E /* InfoPlist.strings in Resources */,
+				AA228A6B137862A400F65E6E /* MainWindow.xib in Resources */,
+				AA12A37D137B2E800016AB24 /* IssueWorksheetController.xib in Resources */,
+				AA12A382137B2FD50016AB24 /* Settings.bundle in Resources */,
+				AA2FF4121382843A00C3ABA4 /* Localizable.strings in Resources */,
+				AA2FF4791382C45B00C3ABA4 /* ValueLookupForm.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA228A77137862A400F65E6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA228A85137862A400F65E6E /* InfoPlist.strings in Resources */,
+				AA228A88137862A400F65E6E /* minIotaTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA228A78137862A400F65E6E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA228A4F137862A400F65E6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA228A65137862A400F65E6E /* main.m in Sources */,
+				AA228A68137862A400F65E6E /* minIotaAppDelegate.m in Sources */,
+				AAECB6CA138160F400EAB251 /* IssueListController.m in Sources */,
+				AA2FF41D1382863700C3ABA4 /* PatientContext.m in Sources */,
+				AA2FF41E1382863700C3ABA4 /* PatientContextDB.m in Sources */,
+				AA2FF4241382867500C3ABA4 /* ServerConnect.m in Sources */,
+				AA2FF4251382867500C3ABA4 /* ServerDiscovery.m in Sources */,
+				AA2FF430138286C500C3ABA4 /* IDRBlock.m in Sources */,
+				AA2FF431138286C500C3ABA4 /* IDRContact.m in Sources */,
+				AA2FF432138286C500C3ABA4 /* IDRObsDefinition.m in Sources */,
+				AA2FF433138286C500C3ABA4 /* IDRValue.m in Sources */,
+				AA2FF434138286C500C3ABA4 /* IDRWorksheet.m in Sources */,
+				AA2FF437138286F500C3ABA4 /* Patient.m in Sources */,
+				AA2FF43B1382872800C3ABA4 /* NSString+iotaAdditions.m in Sources */,
+				AA2FF43F1382877A00C3ABA4 /* Funcs.m in Sources */,
+				AA2FF443138287BF00C3ABA4 /* IDRItem.m in Sources */,
+				AA2FF446138287E800C3ABA4 /* XML2IDR.m in Sources */,
+				AA2FF44C1382883000C3ABA4 /* IDRObservation.m in Sources */,
+				AA2FF44F1382885600C3ABA4 /* IotaContext.m in Sources */,
+				AA2FF4521382887700C3ABA4 /* IDRDescription.m in Sources */,
+				AA2FF455138288AF00C3ABA4 /* IssueWorksheetController.m in Sources */,
+				AA2FF45E1382894200C3ABA4 /* MyIotaPatientContext.m in Sources */,
+				AA2FF4611382896F00C3ABA4 /* IDRImage.m in Sources */,
+				AA2FF4641382899800C3ABA4 /* DetailViewControllerWithToolbar.m in Sources */,
+				AA2FF467138289D000C3ABA4 /* IDRAction.m in Sources */,
+				AA2FF46A138289D800C3ABA4 /* IDRDose.m in Sources */,
+				AA2FF46D138289E100C3ABA4 /* IDRTest.m in Sources */,
+				AA2FF4731382C38900C3ABA4 /* ItemCell.m in Sources */,
+				AA2FF4741382C38900C3ABA4 /* ItemCellIssue.m in Sources */,
+				AA2FF4781382C45B00C3ABA4 /* ValueLookupForm.m in Sources */,
+				AA2FF47C1382C49700C3ABA4 /* ThemeColors.m in Sources */,
+				AA2FF4801382C4F100C3ABA4 /* UIView+iotaExtensions.m in Sources */,
+				AA2FF4831382C51800C3ABA4 /* BulletView.m in Sources */,
+				AA2FF4861382C53E00C3ABA4 /* ValueLookupCell.m in Sources */,
+				AA2FF4891382C58A00C3ABA4 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA228A75137862A400F65E6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA228A8A137862A400F65E6E /* minIotaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA228A7F137862A400F65E6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA228A52137862A400F65E6E /* minIota */;
+			targetProxy = AA228A7E137862A400F65E6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA228A60137862A400F65E6E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA228A61137862A400F65E6E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA228A69137862A400F65E6E /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA228A6A137862A400F65E6E /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		AA228A83137862A400F65E6E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA228A84137862A400F65E6E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA228A8B137862A400F65E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = MINIOTA;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AA228A8C137862A400F65E6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = MINIOTA;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		AA228A8E137862A400F65E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "minIota/minIota-Prefix.pch";
+				INFOPLIST_FILE = "minIota/minIota-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA228A8F137862A400F65E6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "minIota/minIota-Prefix.pch";
+				INFOPLIST_FILE = "minIota/minIota-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AA228A91137862A400F65E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/minIota.app/minIota";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "minIotaTests/minIotaTests-Prefix.pch";
+				INFOPLIST_FILE = "minIotaTests/minIotaTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AA228A92137862A400F65E6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/minIota.app/minIota";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "minIotaTests/minIotaTests-Prefix.pch";
+				INFOPLIST_FILE = "minIotaTests/minIotaTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA228A4D137862A400F65E6E /* Build configuration list for PBXProject "minIota" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA228A8B137862A400F65E6E /* Debug */,
+				AA228A8C137862A400F65E6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA228A8D137862A400F65E6E /* Build configuration list for PBXNativeTarget "minIota" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA228A8E137862A400F65E6E /* Debug */,
+				AA228A8F137862A400F65E6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA228A90137862A400F65E6E /* Build configuration list for PBXNativeTarget "minIotaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA228A91137862A400F65E6E /* Debug */,
+				AA228A92137862A400F65E6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA228A4A137862A400F65E6E /* Project object */;
+}
