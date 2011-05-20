@@ -52,19 +52,16 @@
 
 - (void)_addObserver:(id <IotaContextDelegate>) observer;
 - (void)_removeObserver:(id <IotaContextDelegate>) observer;
-- (void)_saveCurrentPatientContext;
+- (void)_saveCurrentMyIotaPatientContext;
 - (void)_loadNewPatient:(Patient *)newPatient;
 
 
 @property (nonatomic, retain) NSMutableArray *observers;
-@property (nonatomic, retain) PatientContext *currentPatientContext;
-@property (nonatomic, retain) PatientContext *currentMyIotaContext;
+@property (nonatomic, retain) MyIotaPatientContext *currentMyIotaPatientContext;
 
 @property (nonatomic, retain) NSMutableDictionary *worksheets;
 @property (nonatomic, retain) NSMutableDictionary *blocks;
 
-@property (nonatomic, retain) Patient *newPatient;
-@property (nonatomic, retain) PatientContextDB *patientContextDb;
 
 @end
 
@@ -76,14 +73,10 @@
 @implementation IotaContext
 
 @synthesize observers = _observers;
-@synthesize currentPatientContext = _currentPatientContext;
-@synthesize currentMyIotaContext = _currentMyIotaContext;
+@synthesize currentMyIotaPatientContext = _currentMyIotaPatientContext;
 
 @synthesize worksheets = _worksheets;
 @synthesize blocks = _blocks;
-
-@synthesize newPatient = _newPatient;
-@synthesize patientContextDb = _patientContextDb;
 
 // -----------------------------------------------------------
 #pragma mark -
@@ -118,13 +111,10 @@ static IotaContext * volatile _sharedInstance = nil;
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.newPatient = nil;
     self.observers = nil;
-    self.currentPatientContext = nil;
-    self.currentMyIotaContext = nil;
+    self.currentMyIotaPatientContext = nil;
     self.worksheets = nil;
     self.blocks = nil;
-    self.patientContextDb = nil;
     [super dealloc];
 }
 
@@ -172,20 +162,15 @@ static IotaContext * volatile _sharedInstance = nil;
 #pragma mark Patient context
 // -----------------------------------------------------------
 
-+ (PatientContext *)getCurrentPatientContext {
+
++ (MyIotaPatientContext *)getCurrentMyIotaPatientContext {
     @synchronized(self) {
-        return [self _sharedInstance].currentPatientContext;
+        return [self _sharedInstance].currentMyIotaPatientContext;
     }
 }
 
-+ (PatientContext *)getCurrentMyIotaContext {
-    @synchronized(self) {
-        return [self _sharedInstance].currentMyIotaContext;
-    }
-}
-
-+ (void)saveCurrentPatientContext {
-    [[self _sharedInstance] _saveCurrentPatientContext];
++ (void)saveCurrentMyIotaPatientContext {
+    [[self _sharedInstance] _saveCurrentMyIotaPatientContext];
 }
 
 
@@ -196,8 +181,8 @@ static IotaContext * volatile _sharedInstance = nil;
 // -----------------------------------------------------------
 
 - (Patient *)_currentPatient {
-    if (self.currentPatientContext)
-        return self.currentPatientContext.patient;
+    if (self.currentMyIotaPatientContext)
+        return self.currentMyIotaPatientContext.patient;
     else
         return nil;
 }
@@ -239,75 +224,17 @@ static IotaContext * volatile _sharedInstance = nil;
 
 - (void)_loadNewPatient:(Patient *)newPatient {
     NSLog(@"loadNewPatient: %@", newPatient.patientID);
-    self.patientContextDb = [[[PatientContextDB alloc] init] autorelease];
-    self.patientContextDb.delegate = self;
-    [self.patientContextDb loadDataForPatient:newPatient];
+    self.currentMyIotaPatientContext = [PatientContextDB getMyIotaPatientContextForPatient:newPatient];
+    for (id<IotaContextDelegate> observer in _observers) 
+        [observer didSwitchToPatient:self.currentMyIotaPatientContext.patient];
 }
 
-
-
-// Callback after loading new patient
-// ==================================
-//  if loading failed
-//      send or show error message
-//  else if loading succeeded
-//      tell observers we switched to new patient
-
-- (void)loadFromDbDone:(PatientContext *)loadedContext {
-    if (loadedContext == nil) {
-        NSLog(@"We failed loading patient context");
-        [[NSNotificationCenter defaultCenter] postNotificationName:kPatientChangeEnded object:[NSNumber numberWithBool:NO]];
-    }
-    else {
-        NSLog(@"loadFromDbDone");
-        self.currentPatientContext = loadedContext;
-        for (id <IotaContextDelegate> observer in _observers) {
-            [observer didSwitchToPatient:[loadedContext patient]];
-        }
-        [[NSNotificationCenter defaultCenter] postNotificationName:kPatientChangeEnded object:[NSNumber numberWithBool:YES]];
-    }
-    self.patientContextDb = nil;
-}
-
-- (void)loadMyIotaFromDbDone:(PatientContext *)loadedContext {
-    self.currentMyIotaContext = loadedContext;
-    
-    self.currentPatientContext = loadedContext;
-    for (id <IotaContextDelegate> observer in _observers) {
-        [observer didSwitchToPatient:[loadedContext patient]];
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kPatientChangeEnded object:[NSNumber numberWithBool:YES]];
-    self.patientContextDb = nil;
-}
-
-- (void)_saveCurrentPatientContext {
+- (void)_saveCurrentMyIotaPatientContext {
     @synchronized(self) {
-        NSLog(@"saveCurrentPatientContext: %@", self.currentPatientContext.patient.patientID);
-        PatientContext *pCtx = self.currentPatientContext;
-        if (pCtx != nil) {
-            pCtx.patient = [self _currentPatient];
-            self.patientContextDb = [[[PatientContextDB alloc] initForPatientID:pCtx.patient.patientID withPatientContext:pCtx] autorelease];
-            self.patientContextDb.delegate = self;
-            [self.patientContextDb putData];
-        }
+        [PatientContextDB putMyIotaPatientContext:self.currentMyIotaPatientContext];
     }
 }
 
-- (void)saveToDbDone:(BOOL)success {
-    if (!success) {
-        NSLog(@"Failed miserably in saving patient context");
-        return;
-    }
-    [self patientContextSaved:success];
-    self.patientContextDb = nil;
-}
-
-- (void)saveMyIotaToDbDone:(BOOL)success {
-    if (!success) {
-        NSLog(@"Failed miserably in saving patient myIota");
-    }
-    self.patientContextDb = nil;
-}
 
 // -----------------------------------------------------------
 #pragma mark -

@@ -1,6 +1,6 @@
 //
 //  PatientContextDB.m
-//  iotaPad6
+//  iotaMed
 //
 //  Created by Martin on 2011-03-08.
 //  Copyright © 2011, MITM AB, Sweden
@@ -32,7 +32,6 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "PatientContextDB.h"
-#import "PatientContext.h"
 #import "IotaContext.h"
 #import "ServerConnect.h"
 #import "ServerDiscovery.h"
@@ -51,14 +50,8 @@
 // -----------------------------------------------------------
 
 @interface PatientContextDB ()
-@property (nonatomic, retain) NSString *patientID;
-@property (nonatomic, retain) PatientContext *patientContext;
-@property (nonatomic, retain) ServerConnect *serverConnect;
-@property (nonatomic, retain) PatientContextDB *patientContextDb;
 
-- (void)_loadDataFromMyIotaForPatient:(Patient *)patient;
-- (void)_putDataForMyIotaForPatient;
-
+- (BOOL)_putMyIotaPatientContext:(MyIotaPatientContext *)myIotaPatientContext;
 @end
 
 // -----------------------------------------------------------
@@ -68,89 +61,48 @@
 
 @implementation PatientContextDB
 
-@synthesize delegate = _delegate;
-@synthesize patientID = _patientID;
-@synthesize patientContext = _patientContext;
-@synthesize serverConnect = _serverConnect;
-@synthesize patientContextDb = _patientContextDb;
+static NSString *kMyIotaPatientContextKey = @"myIotaPatientContextKey";
 
-static NSString *kPatientContextKey = @"patientContextKey";
-
-- (id)initForPatientID:(NSString *)patientID withPatientContext:(PatientContext *)patientContext {
-    if ((self = [super init])) {
-        self.patientID = patientID;
-        self.patientContext = patientContext;
-    }
-    return self;
-}
 
 - (void)dealloc {
-    self.delegate = nil;
-    self.patientContext = nil;
-    self.patientID = nil;
-    
-    self.serverConnect = nil;
-    
-    self.patientContextDb = nil;
     [super dealloc];
 }
 
-- (void)stopConnect {
-    self.serverConnect = nil;
-}
 
 // -----------------------------------------------------------
 #pragma mark -
 #pragma mark Execs
 // -----------------------------------------------------------
 
-- (void)loadDataForPatient:(Patient *)patient {
-    [self _loadDataFromMyIotaForPatient:patient];
-}
 
-- (void)putData {
-    [self _putDataForMyIotaForPatient];
-}
-
-- (void)_loadDataFromMyIotaForPatient:(Patient *)patient {
-    ServerConnect *srvConn = [[[ServerConnect alloc] init] autorelease];
-    NSData *data = [srvConn recvDataForPatient:patient.patientID datatype:eDataTypePatientWorksheet];
-    PatientContext *pCtx = nil;
+- (MyIotaPatientContext *)_getMyIotaPatientContextForPatient:(Patient *)patient {
+    ServerConnect *sc = [[ServerConnect alloc] init];
+    NSData *data = [sc recvDataForPatient:patient.patientID datatype:eDataTypePatientWorksheet];
+    [sc release];
+    MyIotaPatientContext *miCtx = nil;
     if (data && [data length] > 0) {
         NSKeyedUnarchiver *unarch = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        pCtx = [unarch decodeObjectForKey:kPatientContextKey];
+        miCtx = [unarch decodeObjectForKey:kMyIotaPatientContextKey];
         [unarch release];
     }
-    else {
-        pCtx = [[[PatientContext alloc] init] autorelease];
-        pCtx.patient = patient;
-    }
-    [self.delegate loadMyIotaFromDbDone:pCtx];
+    return miCtx;
 }
 
-- (BOOL)_putContextToServer:(PatientContext *)ctx datatype:(enum eDataType)datatype {
-    NSLog(@"_putContextToServer");
+- (BOOL)_putMyIotaPatientContext:(MyIotaPatientContext *)miCtx {
     NSMutableData *dataToSend = [[NSMutableData alloc] init];
     NSKeyedArchiver *arch = [[NSKeyedArchiver alloc] initForWritingWithMutableData:dataToSend];
     arch.outputFormat = NSPropertyListXMLFormat_v1_0;
-    [arch encodeObject:ctx forKey:kPatientContextKey];
+    [arch encodeObject:miCtx forKey:kMyIotaPatientContextKey];
     [arch finishEncoding];
     
     ServerConnect *sc = [[ServerConnect alloc] init];
-    BOOL success = [sc sendData:dataToSend forPatientId:self.patientID datatype:datatype];
+    NSString *patientID = miCtx.patient.patientID;
+    BOOL success = [sc sendData:dataToSend forPatientId:patientID datatype:eDataTypePatientWorksheet];
     
     [sc release];
     [arch release];
     [dataToSend release];
     return success;
-}
-
-- (void)_putDataForMyIotaForPatient {
-    [self.patientContext dumpWithIndent:0];
-    BOOL success = [self _putContextToServer:self.patientContext datatype:eDataTypePatientWorksheet];
-    if (success)
-        [self.patientContext setDirty:NO];
-    [self.delegate saveToDbDone:YES];
 }
 
 
@@ -159,14 +111,15 @@ static NSString *kPatientContextKey = @"patientContextKey";
 #pragma mark Convenience constructors
 // -----------------------------------------------------------
 
-
-+ (NSString *)dataFilePathForPatientID:(NSString *)patientID {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return [documentsDirectory stringByAppendingPathComponent:patientID];
++ (MyIotaPatientContext *)getMyIotaPatientContextForPatient:(Patient *)patient {
+    PatientContextDB *pcdb = [[[self alloc] init] autorelease];
+    return [pcdb _getMyIotaPatientContextForPatient:patient];
 }
 
-
++ (BOOL)putMyIotaPatientContext:(MyIotaPatientContext *)myIotaPatientContext {
+    PatientContextDB *pcdb = [[[self alloc] init] autorelease];
+    return [pcdb _putMyIotaPatientContext:myIotaPatientContext];
+}
 
 
 @end

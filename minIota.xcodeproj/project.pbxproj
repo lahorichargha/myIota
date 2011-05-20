@@ -23,7 +23,6 @@
 		AA228A88137862A400F65E6E /* minIotaTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AA228A87137862A400F65E6E /* minIotaTests.h */; };
 		AA228A8A137862A400F65E6E /* minIotaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA228A89137862A400F65E6E /* minIotaTests.m */; };
 		AA2FF4121382843A00C3ABA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA2FF4111382843A00C3ABA4 /* Localizable.strings */; };
-		AA2FF41D1382863700C3ABA4 /* PatientContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF41A1382863700C3ABA4 /* PatientContext.m */; };
 		AA2FF41E1382863700C3ABA4 /* PatientContextDB.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */; };
 		AA2FF4241382867500C3ABA4 /* ServerConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4211382867500C3ABA4 /* ServerConnect.m */; };
 		AA2FF4251382867500C3ABA4 /* ServerDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4231382867500C3ABA4 /* ServerDiscovery.m */; };
@@ -91,8 +90,6 @@
 		AA228A89137862A400F65E6E /* minIotaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minIotaTests.m; sourceTree = "<group>"; };
 		AA2FF4111382843A00C3ABA4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		AA2FF418138285C800C3ABA4 /* IotaContextDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IotaContextDelegate.h; path = minIota/IotaContextDelegate.h; sourceTree = SOURCE_ROOT; };
-		AA2FF4191382863700C3ABA4 /* PatientContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientContext.h; path = minIota/PatientContext.h; sourceTree = SOURCE_ROOT; };
-		AA2FF41A1382863700C3ABA4 /* PatientContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientContext.m; path = minIota/PatientContext.m; sourceTree = SOURCE_ROOT; };
 		AA2FF41B1382863700C3ABA4 /* PatientContextDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientContextDB.h; path = minIota/PatientContextDB.h; sourceTree = SOURCE_ROOT; };
 		AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientContextDB.m; path = minIota/PatientContextDB.m; sourceTree = SOURCE_ROOT; };
 		AA2FF4201382867500C3ABA4 /* ServerConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnect.h; sourceTree = "<group>"; };
@@ -350,8 +347,6 @@
 				AA2FF44E1382885600C3ABA4 /* IotaContext.m */,
 				AA2FF435138286F500C3ABA4 /* Patient.h */,
 				AA2FF436138286F500C3ABA4 /* Patient.m */,
-				AA2FF4191382863700C3ABA4 /* PatientContext.h */,
-				AA2FF41A1382863700C3ABA4 /* PatientContext.m */,
 				AA2FF41B1382863700C3ABA4 /* PatientContextDB.h */,
 				AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */,
 				AA2FF418138285C800C3ABA4 /* IotaContextDelegate.h */,
@@ -503,7 +498,6 @@
 				AA228A65137862A400F65E6E /* main.m in Sources */,
 				AA228A68137862A400F65E6E /* minIotaAppDelegate.m in Sources */,
 				AAECB6CA138160F400EAB251 /* IssueListController.m in Sources */,
-				AA2FF41D1382863700C3ABA4 /* PatientContext.m in Sources */,
 				AA2FF41E1382863700C3ABA4 /* PatientContextDB.m in Sources */,
 				AA2FF4241382867500C3ABA4 /* ServerConnect.m in Sources */,
 				AA2FF4251382867500C3ABA4 /* ServerDiscovery.m in Sources */,

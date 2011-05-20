@@ -20,6 +20,13 @@
 @synthesize obsDefinitions = _obsDefinitions;
 @synthesize currentContact = _currentContact;
 
+static NSString *kBlocksKey = @"blocksKey";
+static NSString *kPatientKey = @"patientKey";
+static NSString *kContactsKey = @"contactsKey";
+static NSString *kObsDefinitionsKey = @"obsDefinitionsKey";
+static NSString *kCurrentContactKey = @"currentContactKey";
+
+
 - (id)init {
     if ((self = [super init])) {
         _blocks = [[NSMutableArray alloc] initWithCapacity:5];
@@ -27,6 +34,25 @@
         _obsDefinitions = [[NSMutableArray alloc] initWithCapacity:5];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super init])) {
+        self.blocks = [aDecoder decodeObjectForKey:kBlocksKey];
+        self.patient = [aDecoder decodeObjectForKey:kPatientKey];
+        self.contacts = [aDecoder decodeObjectForKey:kContactsKey];
+        self.obsDefinitions = [aDecoder decodeObjectForKey:kObsDefinitionsKey];
+        self.currentContact = [aDecoder decodeObjectForKey:kCurrentContactKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.blocks forKey:kBlocksKey];
+    [aCoder encodeObject:self.patient forKey:kPatientKey];
+    [aCoder encodeObject:self.contacts forKey:kContactsKey];
+    [aCoder encodeObject:self.obsDefinitions forKey:kObsDefinitionsKey];
+    [aCoder encodeObject:self.currentContact forKey:kCurrentContactKey];
 }
 
 
@@ -56,5 +82,18 @@
     [blockCopy release];
     return YES;
 }
+
+- (IDRObsDefinition *)getOrAddObsDefinitionForName:(NSString *)name type:(NSString *)type {
+    for (IDRObsDefinition *obsDef in self.obsDefinitions) {
+        if ([obsDef.name isEqualToString:name])
+            return obsDef;
+    }
+    IDRObsDefinition *newObsDef = [[[IDRObsDefinition alloc] init] autorelease];
+    newObsDef.name = name;
+    newObsDef.type = type;
+    [self.obsDefinitions addObject:newObsDef];
+    return newObsDef;
+}
+
 
 @end

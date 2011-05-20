@@ -35,7 +35,7 @@
 #import "IDRObsDefinition.h"
 #import "NSString+iotaAdditions.h"
 #import "IotaContext.h"
-#import "PatientContext.h"
+#import "MyIotaPatientContext.h"
 
 // -----------------------------------------------------------
 #pragma mark -
@@ -65,8 +65,8 @@ static NSString *kDirectionGetPut = @"getput";
 
 - (IDRObsDefinition *)obsDefinition {
     if (_obsDefinition == nil) {
-        PatientContext *pCtx = [IotaContext getCurrentPatientContext];
-        _obsDefinition = [[pCtx getOrAddObsDefinitionForName:self.name type:self.type] retain];
+        MyIotaPatientContext *miCtx = [IotaContext getCurrentMyIotaPatientContext];
+        _obsDefinition = [[miCtx getOrAddObsDefinitionForName:self.name type:self.type] retain];
     }
     return [[_obsDefinition retain] autorelease];
 }

@@ -41,7 +41,6 @@
 #import "Notifications.h"
 #import "IDRContact.h"
 #import "IotaContext.h"
-#import "PatientContext.h"
 #import "ValueLookupForm.h"
 #import "Funcs.h"
 #import "ThemeColors.h"
@@ -109,10 +108,8 @@
 
 - (void)setTableHeader {
 
+    /*
     IDRContact *currentContact = [[IotaContext getCurrentPatientContext] currentContact];
-#ifdef IOTAMED
-    self.btnContact.title = (currentContact) ? [currentContact contactAsHeader] : @"<Inga kontakter>";
-#endif
     
     if (!self.idrBlock) {
         self.tableView.tableHeaderView = nil;
@@ -146,7 +143,7 @@
     else {
         [self.tableView setBackgroundColor:[UIColor whiteColor]];
     }
-        
+      */  
 
 }
 

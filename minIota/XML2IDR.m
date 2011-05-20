@@ -42,7 +42,6 @@
 #import "IDRDose.h"
 #import "IDRDescription.h"
 #import "IotaContext.h"
-#import "PatientContext.h"
 
 // -----------------------------------------------------------
 #pragma mark -

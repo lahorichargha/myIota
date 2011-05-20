@@ -34,20 +34,19 @@
 
 #import <Foundation/Foundation.h>
 #import "IotaContextDelegate.h"
-#import "PatientContext.h"
+#import "MyIotaPatientContext.h"
 #import "PatientContextDB.h"
 
 @class Patient;
 @class IDRWorksheet;
 @class IDRBlock;
 
-@interface IotaContext : NSObject <PatientContextDbDelegate> {}
+@interface IotaContext : NSObject {}
 
 + (void)addObserver:(id <IotaContextDelegate>) observer;
 + (void)removeObserver:(id <IotaContextDelegate>) observer;
-+ (PatientContext *)getCurrentPatientContext;
-+ (PatientContext *)getCurrentMyIotaContext;
-+ (void)saveCurrentPatientContext;
++ (MyIotaPatientContext *)getCurrentMyIotaPatientContext;
++ (void)saveCurrentMyIotaPatientContext;
 + (CGFloat)minRowHeight;
 
 

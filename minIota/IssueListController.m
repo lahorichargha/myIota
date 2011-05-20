@@ -34,7 +34,7 @@
 #import "IssueListController.h"
 #import "IotaContext.h"
 #import "Patient.h"
-#import "PatientContext.h"
+#import "MyIotaPatientContext.h"
 #import "IDRWorksheet.h"
 #import "IDRBlock.h"
 #import "Notifications.h"
@@ -123,26 +123,24 @@
 // -----------------------------------------------------------
 
 - (void)loadArrays {
-    PatientContext *pCtx = [IotaContext getCurrentPatientContext];
+    MyIotaPatientContext *miCtx = [IotaContext getCurrentMyIotaPatientContext];
     self.worksheets = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
     self.arrayOfBlockLists = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
     
-    for (IDRContact *contact in pCtx.contacts) {
-        for (IDRBlock *block in contact.idrBlocks) {
-            IDRWorksheet *worksheet = block.worksheet;
-            if (worksheet != nil) {
-                NSUInteger index = [self.worksheets indexOfObject:worksheet];
-                NSMutableArray *blocks = nil;
-                if (index == NSNotFound) {
-                    [self.worksheets addObject:worksheet];
-                    blocks = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
-                    [self.arrayOfBlockLists addObject:blocks];
-                }
-                else {
-                    blocks = [self.arrayOfBlockLists objectAtIndex:index];
-                }
-                [blocks addObject:block];
+    for (IDRBlock *block in miCtx.blocks) {
+       IDRWorksheet *worksheet = block.worksheet;
+       if (worksheet != nil) {
+            NSUInteger index = [self.worksheets indexOfObject:worksheet];
+            NSMutableArray *blocks = nil;
+            if (index == NSNotFound) {
+                [self.worksheets addObject:worksheet];
+                blocks = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
+                [self.arrayOfBlockLists addObject:blocks];
             }
+            else {
+                blocks = [self.arrayOfBlockLists objectAtIndex:index];
+            }
+            [blocks addObject:block];
         }
     }
 }
@@ -151,19 +149,10 @@
     [super viewDidLoad];
     [self loadArrays];
     
-#ifdef IOTAMED
-    self.navigationItem.title = NSLocalizedString(@"Issues", @"Title for issue list and popover");
-    UIBarButtonItem *bbiAdd = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addIssue:)];
-    self.navigationItem.rightBarButtonItem = bbiAdd;
-    [bbiAdd release];
-#endif
-
-#ifdef MINIOTA
     self.navigationItem.title = NSLocalizedString(@"minIota", @"Name of the executable minIota");
     UIBarButtonItem *bbiRefresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshFromServer:)];
     self.navigationItem.rightBarButtonItem = bbiRefresh;
     [bbiRefresh release];
-#endif
     
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -204,9 +193,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-#ifdef MINIOTA
     [self performSelector:@selector(_refreshPatient:) withObject:nil afterDelay:0.5];
-#endif
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -252,14 +239,12 @@
 #pragma mark Refresh patient
 // -----------------------------------------------------------
 
-#ifdef MINIOTA
 - (void)_refreshPatient:(id)obj {
     [self.wsController.activityIndicator startAnimating];
-    [IotaContext saveCurrentPatientContext];
+    [IotaContext saveCurrentMyIotaPatientContext];
     [IotaContext setPresetPatient];
     [self.wsController.activityIndicator stopAnimating];
 }
-#endif
 
 // -----------------------------------------------------------
 #pragma mark -
@@ -311,22 +296,10 @@
 #pragma mark Actions
 // -----------------------------------------------------------
 
-#ifdef IOTAMED
-- (void)addIssue:(id)sender {
-    IssueTemplatesMasterViewController *itmvc = [[[IssueTemplatesMasterViewController alloc] 
-                                                  initWithNibName:@"IssueTemplatesMasterViewController" bundle:nil] autorelease];
-    UINavigationController *unc = [[[UINavigationController alloc] initWithRootViewController:itmvc] autorelease];
-    unc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    unc.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentModalViewController:unc animated:YES];
-}
-#endif
 
-#ifdef MINIOTA
 - (void)refreshFromServer:(id)sender {
     [self _refreshPatient:nil];
 }
-#endif
 
 
 - (void)btnUndo:(id)sender {

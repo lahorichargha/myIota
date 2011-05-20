@@ -11,6 +11,7 @@
 @class Patient;
 @class IDRContact;
 @class IDRBlock;
+@class IDRObsDefinition;
 
 @interface MyIotaPatientContext : NSObject {
     
@@ -25,5 +26,6 @@
 
 - (id)init;
 - (BOOL)addBlockIfNew:(IDRBlock *)theBlock;
+- (IDRObsDefinition *)getOrAddObsDefinitionForName:(NSString *)name type:(NSString *)type;
 
 @end
