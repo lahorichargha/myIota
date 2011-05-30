@@ -149,7 +149,8 @@
     [super viewDidLoad];
     [self loadArrays];
     
-    self.navigationItem.title = NSLocalizedString(@"minIota", @"Name of the executable minIota");
+    //    self.navigationItem.title = NSLocalizedString(@"minIota", @"Name of the executable minIota");
+    self.navigationItem.title = @"minIota";
     UIBarButtonItem *bbiRefresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshFromServer:)];
     self.navigationItem.rightBarButtonItem = bbiRefresh;
     [bbiRefresh release];

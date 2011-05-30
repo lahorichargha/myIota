@@ -22,10 +22,8 @@
 		AA228A85137862A400F65E6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA228A83137862A400F65E6E /* InfoPlist.strings */; };
 		AA228A88137862A400F65E6E /* minIotaTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AA228A87137862A400F65E6E /* minIotaTests.h */; };
 		AA228A8A137862A400F65E6E /* minIotaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA228A89137862A400F65E6E /* minIotaTests.m */; };
-		AA2FF4121382843A00C3ABA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA2FF4111382843A00C3ABA4 /* Localizable.strings */; };
+		AA28E2BC138704AE0031ED8E /* libiotaShared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA28E2BB138704AE0031ED8E /* libiotaShared.a */; };
 		AA2FF41E1382863700C3ABA4 /* PatientContextDB.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */; };
-		AA2FF4241382867500C3ABA4 /* ServerConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4211382867500C3ABA4 /* ServerConnect.m */; };
-		AA2FF4251382867500C3ABA4 /* ServerDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4231382867500C3ABA4 /* ServerDiscovery.m */; };
 		AA2FF430138286C500C3ABA4 /* IDRBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF427138286C500C3ABA4 /* IDRBlock.m */; };
 		AA2FF431138286C500C3ABA4 /* IDRContact.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF429138286C500C3ABA4 /* IDRContact.m */; };
 		AA2FF432138286C500C3ABA4 /* IDRObsDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF42B138286C500C3ABA4 /* IDRObsDefinition.m */; };
@@ -55,6 +53,12 @@
 		AA2FF4831382C51800C3ABA4 /* BulletView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4821382C51700C3ABA4 /* BulletView.m */; };
 		AA2FF4861382C53E00C3ABA4 /* ValueLookupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4851382C53D00C3ABA4 /* ValueLookupCell.m */; };
 		AA2FF4891382C58A00C3ABA4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FF4881382C58A00C3ABA4 /* DetailViewController.m */; };
+		AAE9F09D1388336C00B815C1 /* MyNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9F09C1388336C00B815C1 /* MyNavBar.m */; };
+		AAE9F0A21388353700B815C1 /* bbg.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9F0A11388353700B815C1 /* bbg.png */; };
+		AAE9F0A5138835CD00B815C1 /* MyToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9F0A4138835CC00B815C1 /* MyToolBar.m */; };
+		AAE9F0A7138836A100B815C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE9F0A9138836A100B815C1 /* Localizable.strings */; };
+		AAE9F0B413883A8200B815C1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9F0B313883A8200B815C1 /* Default-Landscape~ipad.png */; };
+		AAE9F0B613883A8B00B815C1 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9F0B513883A8A00B815C1 /* Default-Portrait~ipad.png */; };
 		AAECB6CA138160F400EAB251 /* IssueListController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAECB6C9138160F400EAB251 /* IssueListController.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = AA228A52137862A400F65E6E;
 			remoteInfo = minIota;
+		};
+		AA28E2B4138704860031ED8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA28E2AC138704860031ED8E /* iotaShared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAB19E8F1386EEBE00C03028;
+			remoteInfo = iotaShared;
+		};
+		AA28E2B6138704860031ED8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA28E2AC138704860031ED8E /* iotaShared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAB19E9C1386EEBE00C03028;
+			remoteInfo = iotaSharedTests;
+		};
+		AA28E2B9138704A20031ED8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA28E2AC138704860031ED8E /* iotaShared.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AAB19E8E1386EEBE00C03028;
+			remoteInfo = iotaShared;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -88,14 +113,11 @@
 		AA228A86137862A400F65E6E /* minIotaTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "minIotaTests-Prefix.pch"; sourceTree = "<group>"; };
 		AA228A87137862A400F65E6E /* minIotaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minIotaTests.h; sourceTree = "<group>"; };
 		AA228A89137862A400F65E6E /* minIotaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minIotaTests.m; sourceTree = "<group>"; };
-		AA2FF4111382843A00C3ABA4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		AA28E2AC138704860031ED8E /* iotaShared.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iotaShared.xcodeproj; path = Components/iotaShared/iotaShared.xcodeproj; sourceTree = "<group>"; };
+		AA28E2BB138704AE0031ED8E /* libiotaShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libiotaShared.a; sourceTree = SOURCE_ROOT; };
 		AA2FF418138285C800C3ABA4 /* IotaContextDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IotaContextDelegate.h; path = minIota/IotaContextDelegate.h; sourceTree = SOURCE_ROOT; };
 		AA2FF41B1382863700C3ABA4 /* PatientContextDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatientContextDB.h; path = minIota/PatientContextDB.h; sourceTree = SOURCE_ROOT; };
 		AA2FF41C1382863700C3ABA4 /* PatientContextDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatientContextDB.m; path = minIota/PatientContextDB.m; sourceTree = SOURCE_ROOT; };
-		AA2FF4201382867500C3ABA4 /* ServerConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnect.h; sourceTree = "<group>"; };
-		AA2FF4211382867500C3ABA4 /* ServerConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnect.m; sourceTree = "<group>"; };
-		AA2FF4221382867500C3ABA4 /* ServerDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDiscovery.h; sourceTree = "<group>"; };
-		AA2FF4231382867500C3ABA4 /* ServerDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerDiscovery.m; sourceTree = "<group>"; };
 		AA2FF426138286C500C3ABA4 /* IDRBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRBlock.h; path = minIota/IDRBlock.h; sourceTree = SOURCE_ROOT; };
 		AA2FF427138286C500C3ABA4 /* IDRBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDRBlock.m; path = minIota/IDRBlock.m; sourceTree = SOURCE_ROOT; };
 		AA2FF428138286C500C3ABA4 /* IDRContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDRContact.h; path = minIota/IDRContact.h; sourceTree = SOURCE_ROOT; };
@@ -158,6 +180,15 @@
 		AA2FF4851382C53D00C3ABA4 /* ValueLookupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueLookupCell.m; sourceTree = "<group>"; };
 		AA2FF4871382C58900C3ABA4 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		AA2FF4881382C58A00C3ABA4 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		AAE9F09B1388336C00B815C1 /* MyNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyNavBar.h; path = ../MyNavBar.h; sourceTree = "<group>"; };
+		AAE9F09C1388336C00B815C1 /* MyNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyNavBar.m; path = ../MyNavBar.m; sourceTree = "<group>"; };
+		AAE9F0A11388353700B815C1 /* bbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbg.png; sourceTree = "<group>"; };
+		AAE9F0A3138835CC00B815C1 /* MyToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyToolBar.h; sourceTree = "<group>"; };
+		AAE9F0A4138835CC00B815C1 /* MyToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyToolBar.m; sourceTree = "<group>"; };
+		AAE9F0A8138836A100B815C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AAE9F0AA138836A800B815C1 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AAE9F0B313883A8200B815C1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		AAE9F0B513883A8A00B815C1 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		AAECB6C8138160F400EAB251 /* IssueListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IssueListController.h; path = minIota/IssueListController.h; sourceTree = SOURCE_ROOT; };
 		AAECB6C9138160F400EAB251 /* IssueListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IssueListController.m; path = minIota/IssueListController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -170,6 +201,7 @@
 				AA228A58137862A400F65E6E /* UIKit.framework in Frameworks */,
 				AA228A5A137862A400F65E6E /* Foundation.framework in Frameworks */,
 				AA228A5C137862A400F65E6E /* CoreGraphics.framework in Frameworks */,
+				AA28E2BC138704AE0031ED8E /* libiotaShared.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +232,12 @@
 		AA228A48137862A400F65E6E = {
 			isa = PBXGroup;
 			children = (
-				AA2FF4111382843A00C3ABA4 /* Localizable.strings */,
+				AAE9F0B513883A8A00B815C1 /* Default-Portrait~ipad.png */,
+				AAE9F0B313883A8200B815C1 /* Default-Landscape~ipad.png */,
+				AA28E2AC138704860031ED8E /* iotaShared.xcodeproj */,
+				AAE9F0A9138836A100B815C1 /* Localizable.strings */,
 				AA12A387137C70410016AB24 /* Constants */,
+				AA28E2BB138704AE0031ED8E /* libiotaShared.a */,
 				AA12A381137B2FD50016AB24 /* Settings.bundle */,
 				AAF54A721378956900E2D6B5 /* Issue Worksheet */,
 				AA228A5D137862A400F65E6E /* minIota */,
@@ -233,6 +269,11 @@
 		AA228A5D137862A400F65E6E /* minIota */ = {
 			isa = PBXGroup;
 			children = (
+				AAE9F09E1388343B00B815C1 /* Graphics */,
+				AAE9F09B1388336C00B815C1 /* MyNavBar.h */,
+				AAE9F09C1388336C00B815C1 /* MyNavBar.m */,
+				AAE9F0A3138835CC00B815C1 /* MyToolBar.h */,
+				AAE9F0A4138835CC00B815C1 /* MyToolBar.m */,
 				AA2FF4841382C53D00C3ABA4 /* ValueLookupCell.h */,
 				AA2FF4851382C53D00C3ABA4 /* ValueLookupCell.m */,
 				AA2FF4811382C51700C3ABA4 /* BulletView.h */,
@@ -250,7 +291,6 @@
 				AA2FF43A1382872800C3ABA4 /* NSString+iotaAdditions.m */,
 				AA2FF4871382C58900C3ABA4 /* DetailViewController.h */,
 				AA2FF4881382C58A00C3ABA4 /* DetailViewController.m */,
-				AA2FF41F1382866500C3ABA4 /* Connections */,
 				AA228AD01378669600F65E6E /* Context and Patient */,
 				AA228ACC1378663E00F65E6E /* Issue List */,
 				AA228AA31378656700F65E6E /* IDR Worksheet */,
@@ -357,15 +397,21 @@
 			path = ../../iotaPad6;
 			sourceTree = "<group>";
 		};
-		AA2FF41F1382866500C3ABA4 /* Connections */ = {
+		AA28E2AD138704860031ED8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA2FF4201382867500C3ABA4 /* ServerConnect.h */,
-				AA2FF4211382867500C3ABA4 /* ServerConnect.m */,
-				AA2FF4221382867500C3ABA4 /* ServerDiscovery.h */,
-				AA2FF4231382867500C3ABA4 /* ServerDiscovery.m */,
+				AA28E2B5138704860031ED8E /* libiotaShared.a */,
+				AA28E2B7138704860031ED8E /* iotaSharedTests.octest */,
 			);
-			name = Connections;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAE9F09E1388343B00B815C1 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				AAE9F0A11388353700B815C1 /* bbg.png */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 		AAF54A721378956900E2D6B5 /* Issue Worksheet */ = {
@@ -398,6 +444,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AA28E2BA138704A20031ED8E /* PBXTargetDependency */,
 			);
 			name = minIota;
 			productName = minIota;
@@ -437,10 +484,17 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				sv,
 			);
 			mainGroup = AA228A48137862A400F65E6E;
 			productRefGroup = AA228A54137862A400F65E6E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AA28E2AD138704860031ED8E /* Products */;
+					ProjectRef = AA28E2AC138704860031ED8E /* iotaShared.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AA228A52137862A400F65E6E /* minIota */,
@@ -448,6 +502,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AA28E2B5138704860031ED8E /* libiotaShared.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiotaShared.a;
+			remoteRef = AA28E2B4138704860031ED8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA28E2B7138704860031ED8E /* iotaSharedTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = iotaSharedTests.octest;
+			remoteRef = AA28E2B6138704860031ED8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AA228A51137862A400F65E6E /* Resources */ = {
@@ -458,8 +529,11 @@
 				AA228A6B137862A400F65E6E /* MainWindow.xib in Resources */,
 				AA12A37D137B2E800016AB24 /* IssueWorksheetController.xib in Resources */,
 				AA12A382137B2FD50016AB24 /* Settings.bundle in Resources */,
-				AA2FF4121382843A00C3ABA4 /* Localizable.strings in Resources */,
+				AAE9F0A7138836A100B815C1 /* Localizable.strings in Resources */,
 				AA2FF4791382C45B00C3ABA4 /* ValueLookupForm.xib in Resources */,
+				AAE9F0A21388353700B815C1 /* bbg.png in Resources */,
+				AAE9F0B413883A8200B815C1 /* Default-Landscape~ipad.png in Resources */,
+				AAE9F0B613883A8B00B815C1 /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,8 +573,6 @@
 				AA228A68137862A400F65E6E /* minIotaAppDelegate.m in Sources */,
 				AAECB6CA138160F400EAB251 /* IssueListController.m in Sources */,
 				AA2FF41E1382863700C3ABA4 /* PatientContextDB.m in Sources */,
-				AA2FF4241382867500C3ABA4 /* ServerConnect.m in Sources */,
-				AA2FF4251382867500C3ABA4 /* ServerDiscovery.m in Sources */,
 				AA2FF430138286C500C3ABA4 /* IDRBlock.m in Sources */,
 				AA2FF431138286C500C3ABA4 /* IDRContact.m in Sources */,
 				AA2FF432138286C500C3ABA4 /* IDRObsDefinition.m in Sources */,
@@ -529,6 +601,8 @@
 				AA2FF4831382C51800C3ABA4 /* BulletView.m in Sources */,
 				AA2FF4861382C53E00C3ABA4 /* ValueLookupCell.m in Sources */,
 				AA2FF4891382C58A00C3ABA4 /* DetailViewController.m in Sources */,
+				AAE9F09D1388336C00B815C1 /* MyNavBar.m in Sources */,
+				AAE9F0A5138835CD00B815C1 /* MyToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +621,11 @@
 			isa = PBXTargetDependency;
 			target = AA228A52137862A400F65E6E /* minIota */;
 			targetProxy = AA228A7E137862A400F65E6E /* PBXContainerItemProxy */;
+		};
+		AA28E2BA138704A20031ED8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iotaShared;
+			targetProxy = AA28E2B9138704A20031ED8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -573,6 +652,15 @@
 				AA228A84137862A400F65E6E /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AAE9F0A9138836A100B815C1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE9F0A8138836A100B815C1 /* en */,
+				AAE9F0AA138836A800B815C1 /* sv */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -623,7 +711,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "minIota/minIota-Prefix.pch";
 				INFOPLIST_FILE = "minIota/minIota-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "Components/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -636,7 +730,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "minIota/minIota-Prefix.pch";
 				INFOPLIST_FILE = "minIota/minIota-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "Components/**";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

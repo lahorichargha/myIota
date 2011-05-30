@@ -1,0 +1,49 @@
+/* 
+ SWEDISH
+ 
+ Localizable.strings
+ iotaPad6
+ 
+ Created by Martin on 2011-04-13.
+ Copyright 2011 MITM AB. All rights reserved.
+ */
+
+/* Cancel label for button */
+"Cancel" = "Avbryt";
+
+/* Referral cause */
+"Cause:" = "Orsak:";
+
+/* Referral history label */
+"History:" = "Anamnes:";
+
+/* Title for the issue list and popover */
+"Issues" = "Ärenden";
+
+/* Just checking */
+"LocalizedLanguage" = "Svenska";
+
+/* Name of the executable minIota */
+"minIota" = "minIota";
+
+/* new contact label */
+"New contact" = "Ny kontakt";
+
+/* ok label for button */
+"Ok" = "Ok";
+
+/* Prescription */
+"Prescription" = "Ordination";
+
+/* explanatory text in ContactSelectOrCreateForm */
+"SelectOrCreateContact" = "Välj eller lägg till en kontakt för denna undermall:";
+
+/* Send referral button */
+"Send" = "Skicka";
+
+/* Referral status label */
+"Status:" = "Status:";
+
+/* Label for destination of referral */
+"To:" = "Till:";
+

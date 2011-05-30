@@ -24,7 +24,7 @@
 "LocalizedLanguage" = "English";
 
 /* Name of the executable minIota */
-"minIota" = "myIota";
+"minIota" = "minIota";
 
 /* new contact label */
 "New contact" = "New contact";
