@@ -147,6 +147,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _refreshPatient:nil];
     [self loadArrays];
     
     //    self.navigationItem.title = NSLocalizedString(@"minIota", @"Name of the executable minIota");
