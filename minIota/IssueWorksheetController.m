@@ -45,10 +45,6 @@
 #import "Funcs.h"
 #import "ThemeColors.h"
 
-#ifdef IOTAMED
-#import "ContactSelectOrCreateForm.h"
-#endif
-
 @implementation IssueWorksheetController
 
 @synthesize tableView = _tableView;
@@ -56,9 +52,6 @@
 @synthesize idrBlock = _idrBlock;
 @synthesize activityIndicator = _activityIndicator;
 
-#ifdef IOTAMED
-@synthesize btnContact = _btnContact;
-#endif
 
 // -----------------------------------------------------------
 #pragma mark -
@@ -78,9 +71,6 @@
     self.idrWorkSheet = nil;
     self.idrBlock = nil;
     self.activityIndicator = nil;
-#ifdef IOTAMED
-    self.btnContact = nil;
-#endif
     [super dealloc];
 }
 

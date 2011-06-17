@@ -1,130 +1,138 @@
 //
 //  DetailViewController.m
-//  minIota
+//  iotaPad6
 //
-//  Created by Martin on 2011-05-09.
-//  Copyright 2011 MITM AB. All rights reserved.
+//  Created by Martin on 2011-02-16.
+//  Copyright © 2011, MITM AB, Sweden
+//  All rights reserved.
 //
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//  1.  Redistributions of source code must retain the above copyright
+//      notice, this list of conditions and the following disclaimer.
+//
+//  2.  Redistributions in binary form must reproduce the above copyright
+//      notice, this list of conditions and the following disclaimer in the
+//      documentation and/or other materials provided with the distribution.
+//
+//  3.  Neither the name of MITM AB nor the name iotaMed®, nor the
+//      names of its contributors may be used to endorse or promote products
+//      derived from this software without specific prior written permission.
+//
+//  THIS SOFTWARE IS PROVIDED BY MITM AB ‘’AS IS’’ AND ANY
+//  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL MITM AB BE LIABLE FOR ANY
+//  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+//  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "DetailViewController.h"
-
-
-@interface DetailViewController ()
-@property (nonatomic, retain) UIPopoverController *popoverController;
-- (void)configureView;
-@end
+#import "minIotaAppDelegate.h"
+#import "IssueListController.h"
 
 @implementation DetailViewController
 
-@synthesize toolbar=_toolbar;
+// -----------------------------------------------------------
+#pragma mark -
+#pragma mark Abstract (must override)
+// -----------------------------------------------------------
 
-@synthesize detailItem=_detailItem;
+- (void)showPopoverButton:(UIBarButtonItem *)button {
+    
+}
 
-@synthesize detailDescriptionLabel=_detailDescriptionLabel;
+- (void)hidePopoverButton:(UIBarButtonItem *)button {
+    
+}
 
-@synthesize popoverController=_myPopoverController;
+// override only if you want the popover button to appear, but note that only one detail view
+// can ever show the same popover button instance
+- (BOOL)usePopoverButton {
+    return NO;
+}
 
-#pragma mark - Managing the detail item
+// -----------------------------------------------------------
+#pragma mark -
+#pragma mark Notification handlers
+// -----------------------------------------------------------
 
-/*
- When setting the detail item, update the view and dismiss the popover controller if it's showing.
- */
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        [_detailItem release];
-        _detailItem = [newDetailItem retain];
-        
-        // Update the view.
-        [self configureView];
+- (void)showPopoverButtonNotification:(NSNotification *)notification {
+    if ([self usePopoverButton]) 
+        [self showPopoverButton:[[notification userInfo] objectForKey:@"button"]];
+}
+
+- (void)hidePopoverButtonNotification:(NSNotification *)notification {
+    if ([self usePopoverButton])
+        [self hidePopoverButton:[[notification userInfo] objectForKey:@"button"]];
+}
+
+// -----------------------------------------------------------
+#pragma mark -
+#pragma mark Object life cycle
+// -----------------------------------------------------------
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
     }
-
-    if (self.popoverController != nil) {
-        [self.popoverController dismissPopoverAnimated:YES];
-    }        
+    return self;
 }
 
-- (void)configureView {
-    // Update the user interface for the detail item.
-
-    self.detailDescriptionLabel.text = [self.detailItem description];
+- (void)dealloc {
+    [super dealloc];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)didReceiveMemoryWarning {
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation { 
-    return YES;
-}
-
-#pragma mark - Split view support
-
-- (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *) barButtonItem forPopoverController: (UIPopoverController *)pc
-{
-    barButtonItem.title = @"Events";
-    NSMutableArray *items = [[self.toolbar items] mutableCopy];
-    [items insertObject:barButtonItem atIndex:0];
-    [self.toolbar setItems:items animated:YES];
-    [items release];
-    self.popoverController = pc;
-}
-
-// Called when the view is shown again in the split view, invalidating the button and popover controller.
-- (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    NSMutableArray *items = [[self.toolbar items] mutableCopy];
-    [items removeObjectAtIndex:0];
-    [self.toolbar setItems:items animated:YES];
-    [items release];
-    self.popoverController = nil;
-}
+// -----------------------------------------------------------
+#pragma mark -
+#pragma mark View lifecycle
+// -----------------------------------------------------------
 
 /*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView
+ {
+ }
  */
 
-- (void)viewDidUnload
-{
-	[super viewDidUnload];
-
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-	self.popoverController = nil;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    if ([self usePopoverButton]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPopoverButtonNotification:) name:@"showPopoverButton" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hidePopoverButtonNotification:) name:@"hidePopoverButton" object:nil];
+        
+        minIotaAppDelegate *appdel = (minIotaAppDelegate *)[[UIApplication sharedApplication] delegate];
+        IssueListController *ilc = appdel.issueListController;
+        UIBarButtonItem *button = [ilc popoverButtonItem];
+        if (button)
+            [self showPopoverButton:button];
+    }
 }
 
-#pragma mark - Memory management
-
-- (void)didReceiveMemoryWarning
-{
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+    // the following doesn't hurt even if no observers have been registered, so we'll always do it
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)dealloc
-{
-    [_myPopoverController release];
-    [_toolbar release];
-    [_detailItem release];
-    [_detailDescriptionLabel release];
-    [super dealloc];
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+	return YES;
 }
 
 @end

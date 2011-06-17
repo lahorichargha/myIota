@@ -33,35 +33,35 @@
 
 #import "Funcs.h"
 
-BOOL isPortraitOrientation() {
+BOOL isPortraitOrientation(void) {
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     return (UIInterfaceOrientationIsPortrait(orientation));
 }
 
-CGFloat detailWidth() {
+CGFloat detailWidth(void) {
     return (isPortraitOrientation()) ? 768.0 : 1024.0 - 320.0;
 }
 
-NSDateFormatter *dateFormatterDate() {
+NSDateFormatter *dateFormatterDate(void) {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyy-MM-dd"];
     return [df autorelease];
 }
 
-NSDateFormatter *dateFormatter() {
+NSDateFormatter *dateFormatter(void) {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyy-MM-dd HH:mm"];
     return [df autorelease];
 }
 
 // for this kinda shit: 2011-02-28T17:58:00
-NSDateFormatter *dateFormatterTypeT() {
+NSDateFormatter *dateFormatterTypeT(void) {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss"];
     return [df autorelease];
 }
 
-NSDateFormatter *dateFormatterIssueTitles() {
+NSDateFormatter *dateFormatterIssueTitles(void) {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy/MM"];
     return [df autorelease];
@@ -100,7 +100,7 @@ UILabel *navBarLabelWithText(NSString *text) {
     return lbl;
 }
 
-NSString *generateUuidString() {
+NSString *generateUuidString(void) {
     CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
     NSString *uuidString = (NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
     CFRelease(uuid);

@@ -33,16 +33,17 @@
 
 #import <Foundation/Foundation.h>
 
-BOOL isPortraitOrientation();
-CGFloat detailWidth();
-NSDateFormatter *dateFormatterDate();
-NSDateFormatter *dateFormatter();
-NSDateFormatter *dateFormatterTypeT();
+BOOL isPortraitOrientation(void);
+CGFloat detailWidth(void);
+NSDateFormatter *dateFormatterDate(void);
+NSDateFormatter *dateFormatter(void);
+NSDateFormatter *dateFormatterTypeT(void);
+NSDateFormatter *dateFormatterIssueTitles(void);
 NSDate *str2date(NSString *str);
 NSDate *strT2date(NSString *str);
 NSString *dateshort2str(NSDate *date);
 NSString *date2str(NSDate *date);
 NSString *dateForIssueTitles(NSDate *date);
 UILabel *navBarLabelWithText(NSString *text);
-NSString *generateUuidString();
+NSString *generateUuidString(void);
 NSDate *combineDateAndTime(NSDate *datePart, NSDate *timePart);

@@ -476,6 +476,7 @@
 		AA228A4A137862A400F65E6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "MITM AB";
 			};
 			buildConfigurationList = AA228A4D137862A400F65E6E /* Build configuration list for PBXProject "minIota" */;
@@ -677,6 +678,7 @@
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = MINIOTA;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -693,6 +695,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = MINIOTA;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;

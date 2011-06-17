@@ -171,7 +171,6 @@
     //    versionLabel.text = kVersion;
     [self.navigationController.view addSubview:versionLabel];
     
-    
 #ifndef SYSteam
     UITabBarItem *tbiCross = [[self.tabBarController.tabBar items] objectAtIndex:2];
     tbiCross.image = nil;
